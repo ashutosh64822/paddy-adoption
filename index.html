@@ -23,13 +23,80 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- font  -->
+    <link rel="stylesheet" href="./styles/font.css" />
   </head>
-  <body>
+  <body class="latoFont px-20">
     <!-- header section start  -->
-    <header>this is header</header>
+    <header>
+      <nav class="flex items-center justify-between py-8">
+        <div class="left flex justify-center items-center">
+          <img src="./images/logo.webp" alt="logo" />
+          <h1 class="font-black text-3xl">Peddy</h1>
+        </div>
+        <div class="middle">
+          <ul class="flex items-center justify-center gap-5">
+            <li class="cursor-pointer hover:border-b-2">Home</li>
+            <li class="cursor-pointer hover:border-b-2">Shop</li>
+            <li class="cursor-pointer hover:border-b-2">Contact</li>
+          </ul>
+        </div>
+        <div class="right">
+          <button class="btn rounded-full p-3">
+            <i class="fa-solid fa-user"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
     <!-- header section end  -->
+
     <!-- main section start  -->
-    <main>this is main</main>
+    <main>
+      <!-- hero section  -->
+      <section
+        class="hero-container ml-20 flex flex-col items-center justify-center"
+      >
+        <div>
+          <h3 class="font-bold text-2xl text-stone-400 text-center">
+            Bringing Families Together ❤️‍🔥
+          </h3>
+          <h2 class="font-black text-6xl text-center my-4">
+            Your Path to Adoption <br />
+            Starts Here
+          </h2>
+          <p class="text-center text-stone-400 mb-4">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking <br />
+            at its layout. The point of using Lorem Ipsum is that it has a.
+          </p>
+          <div class="flex justify-center items-center">
+            <button
+              class="btn text-white font-bold text-xl bg-teal-800 rounded-lg px-8 py-5"
+            >
+              View More
+            </button>
+          </div>
+        </div>
+        <div class="my-8 w-3/4 flex items-center justify-center">
+          <img src="./images/pet.webp" alt="" />
+        </div>
+        <div>
+          <h2 class="text-4xl font-black text-center my-5">
+            Adopt Your Best Friend
+          </h2>
+          <p class="text-center text-stone-400">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a <br />
+            page when looking at its layout. The point of using Lorem Ipsum is
+            that it has a.
+          </p>
+        </div>
+      </section>
+
+      <!-- category section  -->
+      <section class="category-container"></section>
+    </main>
     <!-- main section end  -->
     <!-- footer section start  -->
     <footer>this is footer</footer>
