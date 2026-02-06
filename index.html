@@ -95,11 +95,42 @@
       </section>
 
       <!-- category section  -->
-      <section class="category-container"></section>
+      <section
+        class="category-container flex justify-center items-center gap-10 my-10"
+      ></section>
+      <!-- pets container  -->
+      <section id="pets-container">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-black text-2xl">Best Deal For you</h3>
+          </div>
+          <div>
+            <button
+              class="btn text-white font-bold text-xl bg-teal-800 rounded-lg px-8 py-5"
+            >
+              Sort by Price
+            </button>
+          </div>
+        </div>
+        <!-- show pets container  -->
+        <div class="grid grid-cols-5 gap-5 relative">
+          <div
+            id="petContainer"
+            class="col-span-4 my-5 grid grid-cols-3 gap-5"
+          ></div>
+          <div
+            id="asideImages"
+            class="grid grid-cols-2 grid-rows-3 place-self-start gap-2 my-5"
+          ></div>
+        </div>
+      </section>
     </main>
     <!-- main section end  -->
     <!-- footer section start  -->
     <footer>this is footer</footer>
     <!-- footer section end  -->
+
+    <!-- js file  -->
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
