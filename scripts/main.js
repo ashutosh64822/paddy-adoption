@@ -1,17 +1,21 @@
 const loadCategories = async () => {
+  showLoader();
   const response = await fetch(
     "https://openapi.programming-hero.com/api/peddy/categories",
   );
   const data = await response.json();
   showCategories(data.categories);
+  hideLoader();
 };
 
 const loadRandomImages = async () => {
+  showLoader();
   const response = await fetch(
     "https://openapi.programming-hero.com/api/peddy/pets",
   );
   const data = await response.json();
   displayRandomImg(data);
+  hideLoader();
 };
 
 const showCategories = (category) => {
@@ -51,12 +55,13 @@ const handleCategoryClick = (button, categoryName) => {
 };
 
 const loadPets = async (categoryName = "cat") => {
-  console.log(categoryName);
+  showLoader();
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/category/${categoryName}`,
   );
   const data = await response.json();
   showPets(data.data);
+  hideLoader();
 };
 
 const showPets = (data) => {
@@ -103,7 +108,6 @@ const showPets = (data) => {
 };
 
 const displayRandomImg = (pet) => {
-  console.log(pet);
   const asideImages = document.querySelector("#asideImages");
   asideImages.innerHTML = "";
 
@@ -122,6 +126,14 @@ const displayRandomImg = (pet) => {
     `;
     asideImages.appendChild(div);
   });
+};
+
+const showLoader = () => {
+  document.querySelector(".loader").classList.remove("hidden");
+};
+
+const hideLoader = () => {
+  document.querySelector(".loader").classList.add("hidden");
 };
 
 loadCategories();
