@@ -50,7 +50,7 @@ const handleCategoryClick = (button, categoryName) => {
   loadRandomImages();
 };
 
-const loadPets = async (categoryName) => {
+const loadPets = async (categoryName = "cat") => {
   console.log(categoryName);
   const response = await fetch(
     `https://openapi.programming-hero.com/api/peddy/category/${categoryName}`,
@@ -125,5 +125,5 @@ const displayRandomImg = (pet) => {
 };
 
 loadCategories();
-loadPets("cat");
+loadPets();
 loadRandomImages();
