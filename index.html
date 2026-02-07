@@ -27,9 +27,9 @@
     <!-- font  -->
     <link rel="stylesheet" href="./styles/font.css" />
   </head>
-  <body class="latoFont px-20">
+  <body class="latoFont">
     <!-- header section start  -->
-    <header>
+    <header class="px-20">
       <nav class="flex items-center justify-between py-8">
         <div class="left flex justify-center items-center">
           <img src="./images/logo.webp" alt="logo" />
@@ -52,7 +52,7 @@
     <!-- header section end  -->
 
     <!-- main section start  -->
-    <main>
+    <main class="px-20">
       <!-- hero section  -->
       <section
         class="hero-container ml-20 flex flex-col items-center justify-center"
@@ -154,7 +154,57 @@
     </main>
     <!-- main section end  -->
     <!-- footer section start  -->
-    <footer>this is footer</footer>
+
+    <footer
+      class="footer sm:footer-horizontal bg-neutral text-neutral-content px-20 py-20"
+    >
+      <nav>
+        <div class="flex items-center justify-center">
+          <img src="./images/logo.webp" alt="logo" />
+          <h1 class="text-3xl font-black text-white ml-3">Paddy</h1>
+        </div>
+        <a class="link link-hover">Location: av. Washington 165, NY CA 54003</a>
+        <a class="link link-hover">Phone: +31 85 964 47 25</a>
+        <a class="link link-hover">Email: info@yourdomain.com</a>
+        <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+        <div class="flex justify-center items-center">
+          <div>
+            <i class="fa-brands fa-facebook text-3xl text-blue-700"></i>
+          </div>
+          <div class="ml-5">
+            <i class="fa-brands fa-x-twitter text-3xl text-white"></i>
+          </div>
+          <div class="ml-5">
+            <i class="fa-brands fa-youtube text-3xl text-red-700"></i>
+          </div>
+          <div class="ml-5">
+            <i class="fa-brands fa-instagram text-3xl text-orange-700"></i>
+          </div>
+        </div>
+      </nav>
+      <nav>
+        <h6 class="footer-title interFont">Useful Links</h6>
+        <a class="link link-hover">Home</a>
+        <a class="link link-hover">About Us</a>
+        <a class="link link-hover">Animals</a>
+        <a class="link link-hover">Foundation</a>
+        <a class="link link-hover">Contact</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Drop a Message</h6>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter your email"
+            class="input bg-neutral-800 w-full"
+          />
+        </div>
+        <button class="btn bg-teal-800 text-white px-8 py-4 border-none">
+          Subscribe
+        </button>
+      </nav>
+    </footer>
+
     <!-- footer section end  -->
 
     <!-- js file  -->
