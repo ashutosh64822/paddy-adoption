@@ -24,11 +24,10 @@ const showCategories = (category) => {
 
   category.forEach((cate, index) => {
     const div = document.createElement("div");
-
     div.innerHTML = `
       <button 
         onclick='handleCategoryClick(this, "${cate.category}")'
-        class="category-btn btn font-bold interFont text-2xl px-8 py-6 rounded-xl ${
+        class="category-btn btn font-bold interFont text-xl md:text-2xl px-8 py-6 rounded-xl ${
           index === 0 ? "bg-teal-800 text-white" : ""
         }">
         <img class="w-8 inline-block mr-2" src="${cate.category_icon}"/>
@@ -95,12 +94,12 @@ const showPets = (data) => {
                   <i class="fa-regular fa-thumbs-up"></i>
                 </button>
                 <button
-                  class="btn font-bold text-teal-800 text-xl bg-transparent px-6 py-4"
+                  class="btn font-bold text-teal-800 md:text-xl bg-transparent px-4 py-2"
                 >
                   Adopt
                 </button>
                 <button
-                  class="btn font-bold text-teal-800 text-xl bg-transparent px-6 py-4"
+                  class="btn font-bold text-teal-800 md:text-xl bg-transparent px-4 py-2"
                 >
                   Details
                 </button>
@@ -126,7 +125,7 @@ const displayRandomImg = (pet) => {
     div.innerHTML = `
       <img 
         src="${pet.image}" 
-        class="w-full h-28 object-cover rounded-lg"
+        class="w-full h-40 object-center object-cover rounded-lg "
       />
     `;
     asideImages.appendChild(div);

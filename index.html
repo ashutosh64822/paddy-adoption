@@ -29,13 +29,31 @@
   </head>
   <body class="latoFont">
     <!-- header section start  -->
-    <header class="px-20">
+    <header class="px-5 md:px-16">
       <nav class="flex items-center justify-between py-8">
+        <!-- dropdown menu  -->
+        <div class="dropdown md:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="-1"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            <li><a>Home</a></li>
+            <li><a>Shop</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
         <div class="left flex justify-center items-center">
           <img src="./images/logo.webp" alt="logo" />
-          <h1 class="font-black text-3xl">Peddy</h1>
+          <h1 class="font-black text-3xl ml-2">Peddy</h1>
         </div>
-        <div class="middle">
+        <div class="middle hidden md:block">
           <ul class="flex items-center justify-center gap-5">
             <li class="cursor-pointer hover:border-b-2">Home</li>
             <li class="cursor-pointer hover:border-b-2">Shop</li>
@@ -52,16 +70,18 @@
     <!-- header section end  -->
 
     <!-- main section start  -->
-    <main class="px-20">
+    <main class="px-5 md:px-16">
       <!-- hero section  -->
       <section
-        class="hero-container ml-20 flex flex-col items-center justify-center"
+        class="hero-container md:ml-20 flex flex-col items-center justify-center"
       >
         <div>
-          <h3 class="font-bold text-2xl text-stone-400 text-center">
+          <h3 class="font-bold text-xl md:text-2xl text-stone-400 text-center">
             Bringing Families Together ❤️‍🔥
           </h3>
-          <h2 class="font-black text-6xl text-center my-4">
+          <h2
+            class="font-black text-3xl md:text-5xl lg:text-6xl text-center my-4"
+          >
             Your Path to Adoption <br />
             Starts Here
           </h2>
@@ -96,22 +116,23 @@
 
       <!-- category section  -->
       <section
-        class="category-container flex justify-center items-center gap-10 my-10"
+        class="category-container grid grid-cols-2 gap-5 md:flex md:justify-center md:items-center md:gap-10 my-10"
       ></section>
       <!-- pets container  -->
       <section id="pets-container">
         <div class="flex justify-between items-center">
           <div>
-            <h3 class="text-black text-2xl">Best Deal For you</h3>
+            <h3 class="text-black text-xl md:text-2xl">Best Deal For you</h3>
           </div>
           <div>
             <button
-              class="btn text-white font-bold text-xl bg-teal-800 rounded-lg px-8 py-5"
+              class="btn text-white font-bold md:text-xl bg-teal-800 rounded-lg px-8 py-5"
             >
               Sort by Price
             </button>
           </div>
         </div>
+        <!-- loader start -->
         <div class="flex justify-center items-center">
           <div class="hidden loader mt-10">
             <span class="loading loading-dots loading-xs"></span>
@@ -121,15 +142,17 @@
             <span class="loading loading-dots loading-xl"></span>
           </div>
         </div>
+        <!-- loader end  -->
         <!-- show pets container  -->
-        <div class="grid grid-cols-5 gap-5 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 relative">
           <div
             id="petContainer"
-            class="col-span-4 my-5 grid grid-cols-3 gap-5"
+            class="md:col-span-3 lg:col-span-4 my-5 grid md:grid-cols-2 lg:grid-cols-3 gap-5"
           ></div>
+
           <div
             id="notFound"
-            class="hidden bg-stone-100 rounded-xl my-5 flex flex-col justify-center items-center p-20 col-span-4"
+            class="hidden bg-stone-100 rounded-xl my-5 flex flex-col justify-center items-center px-2 py-5 md:p-20 col-span-4"
           >
             <div>
               <img src="./images/error.webp" alt="" />
@@ -145,10 +168,12 @@
               </p>
             </div>
           </div>
-          <div
-            id="asideImages"
-            class="grid grid-cols-2 grid-rows-3 place-self-start gap-2 my-5"
-          ></div>
+          <div class="md:col-span-3 lg:col-span-1 flex justify-center">
+            <div
+              id="asideImages"
+              class="grid grid-cols-2 md:place-self-start gap-4 my-5"
+            ></div>
+          </div>
         </div>
       </section>
     </main>
@@ -156,7 +181,7 @@
     <!-- footer section start  -->
 
     <footer
-      class="footer sm:footer-horizontal bg-neutral text-neutral-content px-20 py-20"
+      class="footer sm:footer-horizontal bg-neutral text-neutral-content px-5 md:px-16 py-20"
     >
       <nav>
         <div class="flex items-center justify-center">
