@@ -18,6 +18,14 @@ const loadRandomImages = async () => {
   hideLoader();
 };
 
+const fetchPetId = async (id) => {
+  const response = await fetch(
+    `https://openapi.programming-hero.com/api/peddy/pet/${id}`,
+  );
+  const data = await response.json();
+  displayModal(data.petData);
+};
+
 const showCategories = (category) => {
   const categoryContaier = document.querySelector(".category-container");
   categoryContaier.innerHTML = "";
@@ -99,6 +107,7 @@ const showPets = (data) => {
                   Adopt
                 </button>
                 <button
+                  onclick = fetchPetId(${element.petId})
                   class="btn font-bold text-teal-800 md:text-xl bg-transparent px-4 py-2"
                 >
                   Details
@@ -130,6 +139,43 @@ const displayRandomImg = (pet) => {
     `;
     asideImages.appendChild(div);
   });
+};
+
+const displayModal = (e) => {
+  console.log(e);
+  const detailsModal = document.getElementById("detailsModal");
+  detailsModal.innerHTML = `
+    <div class="card bg-base-100 w-96 shadow-sm">
+      <figure>
+        <img
+          class="w-full object-fill object-center"
+          src="${e.image}"
+          alt="pet image" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title text-2xl font-bold ">${e.pet_name}</h2>
+        <div class="grid grid-cols-2">
+          <p class="text-stone-400"><i class="fa-solid fa-grip"></i> Breed: ${e.breed}</p>
+          <p class="text-stone-400"><i class="fa-regular fa-calendar"></i> Birth: ${e.date_of_birth}</p>
+          <p class="text-stone-400"><i class="fa-solid fa-mercury"></i> Gender: ${e.gender}</p>
+          <p class="text-stone-400"><i class="fa-solid fa-dollar-sign"></i> Price : ${e.price}$</p>
+        </div>
+    
+        <hr class="text-stone-400 my-1" />
+        <h6 class = "interFont font-medium">Details information</h6>
+        <p class = 'text-stone-400'>${e.pet_details}</p>
+      </div>
+      <div class='px-4 py-2'>
+        <button 
+          id="closeBtn" 
+          class="bg-green-200 text-green-800 px-10 py-4 w-full border btn rounded-lg"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  `;
+  detailsModal.showModal();
 };
 
 const showLoader = () => {
