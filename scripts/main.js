@@ -67,6 +67,11 @@ const loadPets = async (categoryName = "cat") => {
 const showPets = (data) => {
   const petContainer = document.querySelector("#petContainer");
   petContainer.innerHTML = "";
+  if (data.length < 1) {
+    document.getElementById("notFound").classList.remove("hidden");
+  } else {
+    document.getElementById("notFound").classList.add("hidden");
+  }
   data.forEach((element) => {
     const div = document.createElement("div");
     div.innerHTML = `
