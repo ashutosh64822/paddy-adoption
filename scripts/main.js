@@ -145,16 +145,16 @@ const displayModal = (e) => {
   console.log(e);
   const detailsModal = document.getElementById("detailsModal");
   detailsModal.innerHTML = `
-    <div class="card bg-base-100 w-96 shadow-sm">
+    <div class="card bg-base-100 w-80 shadow-sm">
       <figure>
         <img
           class="w-full object-fill object-center"
           src="${e.image}"
           alt="pet image" />
       </figure>
-      <div class="card-body">
+      <div class="px-3 py-1">
         <h2 class="card-title text-2xl font-bold ">${e.pet_name}</h2>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-1">
           <p class="text-stone-400"><i class="fa-solid fa-grip"></i> Breed: ${e.breed}</p>
           <p class="text-stone-400"><i class="fa-regular fa-calendar"></i> Birth: ${e.date_of_birth}</p>
           <p class="text-stone-400"><i class="fa-solid fa-mercury"></i> Gender: ${e.gender}</p>
@@ -165,14 +165,13 @@ const displayModal = (e) => {
         <h6 class = "interFont font-medium">Details information</h6>
         <p class = 'text-stone-400'>${e.pet_details}</p>
       </div>
-      <div class='px-4 py-2'>
-        <button 
-          id="closeBtn" 
+      <form method="dialog" class='pb-3 px-3'>
+        <button
           class="bg-green-200 text-green-800 px-10 py-4 w-full border btn rounded-lg"
-        >
-          Cancel
+          >
+            Close
         </button>
-      </div>
+      </form>
     </div>
   `;
   detailsModal.showModal();
